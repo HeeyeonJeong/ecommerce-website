@@ -1,0 +1,116 @@
+{
+    "shoesBox": [
+      {
+        "id": 1,
+        "price": 105000,
+        "color": "black",
+        "image": "./assets/shoes_black.png",
+      },
+      {
+        "id": 2,
+        "price": 135000,
+        "color": "black",
+        "image": "./assets/shoes_black2.png",
+      },
+      {
+        "id": 3,
+        "price": 120000,
+        "color": "blue",
+        "image": "./assets/shoes_blue.png",
+      },
+      {
+        "id": 4,
+        "price": 100000,
+        "color": "brown",
+        "image": "./assets/shoes_brown.png",
+      },
+      {
+        "id": 5,
+        "price": 110000,
+        "color": "brown",
+        "image": "./assets/shoes_brown2.png",
+      },
+      {
+        "id": 6,
+        "price": 156000,
+        "color": "green",
+        "image": "./assets/shoes_green.png",
+      },      {
+        "id": 7,
+        "price": 190000,
+        "color": "green",
+        "image": "./assets/shoes_green2.png",
+      },      {
+        "id": 8,
+        "price": 110000,
+        "color": "green",
+        "image": "./assets/shoes_green3.png",
+      },      {
+        "id": 9,
+        "price": 160000,
+        "color": "grey",
+        "image": "./assets/shoes_grey.png",
+      },      {
+        "id": 10,
+        "price": 185000,
+        "color": "pink",
+        "image": "./assets/shoes_pink.png",
+      },
+      {
+        "id": 11,
+        "price": 190000,
+        "color": "pink",
+        "image": "./assets/shoes_pink2.png",
+      },      {
+        "id": 12,
+        "price": 215000,
+        "color": "pink",
+        "image": "./assets/shoes_pink3.png",
+      },      {
+        "id": 13,
+        "price": 265000,
+        "color": "purple",
+        "image": "./assets/shoes_purple.png",
+      },      {
+        "id": 14,
+        "price": 138000,
+        "color": "red",
+        "image": "./assets/shoes_red.png",
+      },      {
+        "id": 15,
+        "price": 183000,
+        "color": "red",
+        "image": "./assets/shoes_red2.png",
+      },      {
+        "id": 16,
+        "price": 175000,
+        "color": "red",
+        "image": "./assets/shoes_red3.png",
+      },      {
+        "id": 17,
+        "price": 194000,
+        "color": "white",
+        "image": "./assets/shoes_white.png",
+      },      {
+        "id": 18,
+        "price": 240000,
+        "color": "white",
+        "image": "./assets/shoes_white2.png",
+      },      {
+        "id": 19,
+        "price": 153000,
+        "color": "white",
+        "image": "./assets/shoes_white3.png",
+      },      {
+        "id": 20,
+        "price": 199000,
+        "color": "yellow",
+        "image": "./assets/shoes_yellow.png",
+      },      {
+        "id": 21,
+        "price": 200000,
+        "color": "yellow",
+        "image": "./assets/shoes_yellow2.png",
+      },
+    ]
+}
