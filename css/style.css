@@ -45,11 +45,8 @@
   height: 100%;
   position: fixed;
   top: 0;
-  left: 700px;
-  transition: All 0.3s ease-in;
-  -webkit-transition: All 0.3s ease-in;
-  -moz-transition: All 0.3s ease-in;
-  -o-transition: All 0.3s ease-in;
+  left: -100%;
+  transition: 0.4s;
 }
 
 .top-nav-category.open {
@@ -64,10 +61,6 @@
   background: transparent;
   border: none;
   font-size: 1.8rem;
-  transition: All 0.2s ease;
-  -webkit-transition: All 0.2s ease;
-  -moz-transition: All 0.2s ease;
-  -o-transition: All 0.2s ease;
 }
 
 .top-nav-category .category-box {
@@ -153,6 +146,10 @@
 
 /* 768px */
 @media only screen and (min-width: 768px) {
+  .top-nav-category {
+    display: none;
+  }
+
   .top-nav .top-nav-modal {
     display: none;
   }
