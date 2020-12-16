@@ -1,8 +1,9 @@
 const slideOpenBtn = document.querySelector(".top-nav-modal");
 const slideCloseBtn = document.querySelector(".category-close");
 const slideMenu = document.querySelector(".top-nav-category");
+const newListBox = document.querySelector(".new-box");
 
-//slide sidebar menu
+//top-nav / slide sidebar menu
 function slideMenuHandler(e) {
   const target = e.target;
   const activetarget = e.currentTarget.document.activeElement;
@@ -14,3 +15,17 @@ function slideMenuHandler(e) {
 }
 
 window.addEventListener("click", slideMenuHandler);
+
+//New Item / horizontal-scroll
+function newItemWheel(e) {
+  if (e.path[3] === newListBox) {
+    document.body.classList.add("stop-scrolling");
+    e.deltaY > 0
+      ? (newListBox.scrollLeft += 40)
+      : (newListBox.scrollLeft -= 40);
+  } else {
+    document.body.classList.remove("stop-scrolling");
+  }
+}
+
+window.addEventListener("wheel", newItemWheel);
