@@ -21,7 +21,15 @@
             <a href="index.html" class="top-title">SHOES</a>
             <a href="cart.html" class="top-nav-cart">
                 <i class='bx bx-cart'></i>
-            </a>    
+            </a>
+            <div class="top-category">
+                <ul class="category-box">
+                    <li class="category-item"><a href="index.html#new">New</a></li>
+                    <li class="category-item"><a href="index.html#goods">Goods</a></li>
+                    <li class="category-item"><a href="wishlist.html">Wish</a></li>
+                    <li class="category-item"><a href="cart.html">Cart</a></li>
+                </ul>
+            </div>
         </nav>
         <div class="top-nav-category">
             <ul class="category-box">
@@ -37,15 +45,15 @@
     </header>
     
     <!-- landing Page -->
-    <section id="home">
+    <section id="home" class="home">
         <div class="landing">
             <div class="landing-image-box">
                 <img src="./assets/shoes_pink.png" alt="shoes-image">
             </div>
             <div class="landing-desc-box">
-                <div class="landing-desc">
-                    <h2 class="card-tit">EIR MAX - APS - 200</h2>
-                    <p class="card-des">shoes life style</p>
+                <div class="sec-top">
+                    <h2 class="sec-tit">EIR MAX - APS - 200</h2>
+                    <p class="sec-desc">shoes life style</p>
                 </div>
                 <button type="button" class="landing-desc-btn">More</button>        
             </div>
@@ -53,12 +61,58 @@
     </section>
 
     <!-- new item-->
-    <section id="new">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error voluptates animi, accusamus nostrum, dolor quisquam mollitia autem sequi rem deserunt eligendi ipsam earum eos veniam sint laboriosam saepe praesentium doloribus!</p>
+    <section id="new" class="new-page">
+        <div class="sec-top new-top">
+            <h1 class="sec-tit new-tit">New Item</h1>
+            <p class="sec-desc">Look for new items</p>
+        </div>
+        <ul class="new-box">
+            <li class="new-box-list">
+                <a href="#" class="new-item-link">
+                    <img src="./assets/shoes_white3.png" alt="new goods" class="new-item">
+                </a>
+            </li>
+            <li class="new-box-list">
+                <a href="#" class="new-item-link">
+                    <img src="./assets/shoes_white2.png" alt="new goods" class="new-item">
+                </a>
+                
+            </li>
+            <li class="new-box-list">
+                <a href="#" class="new-item-link">
+                    <img src="./assets/shoes_blue.png" alt="new goods" class="new-item">
+                </a>
+            </li>
+            <li class="new-box-list">
+                <a href="#" class="new-item-link">
+                    <img src="./assets/shoes_green2.png" alt="new goods" class="new-item">
+                </a>
+            </li>
+            <li class="new-box-list">
+                <a href="#" class="new-item-link">
+                    <img src="./assets/shoes_brown.png" alt="new goods" class="new-item">
+                </a>
+            </li>
+            <li class="new-box-list">
+                <a href="#" class="new-item-link">
+                    <img src="./assets/shoes_red3.png" alt="new goods" class="new-item">
+                </a>
+            </li>
+            <li class="new-box-list">
+                <a href="#" class="new-item-link">
+                    <img src="./assets/shoes_yellow2.png" alt="new goods" class="new-item">
+                </a>
+            </li>
+        </ul>
     </section>
 
     <!-- goods -->
-    <section id="goods"></section>
+    <section id="goods" class="good-page">
+        <div class="sec-top">
+            <h1 class="sec-tit">Goods</h1>
+            <p class="sec-desc">Choose the product you like</p>    
+        </div>
+    </section>
 
     <footer></footer>
     <script src="./js/main.js"></script>
