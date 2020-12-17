@@ -195,6 +195,74 @@
 }
 
 /* section-goods */
+.goods-page {
+  padding: 8rem 3.5rem;
+}
+
+.goods-page .sec-top {
+  margin-bottom: 3rem;
+}
+
+.goods-page .sec-top .goods-desc {
+  font-size: 2.2rem;
+}
+
+.goods-page .goods-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+}
+
+.goods-page .goods-container .goods-card {
+  padding: 2rem;
+  background-color: rgb(241, 241, 241);
+  border-radius: 10px;
+  margin-bottom: 3.5rem;
+}
+
+/* .goods-card .goods-item-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.goods-card .goods-item-link .card-img-box {
+  width: 100%;
+}
+
+.goods-card .goods-item-link .card-img-box .card-img {
+  display: block;
+  width: inherit;
+}
+
+.goods-card .goods-item-link .card-info {
+  text-align: center;
+}
+
+.card-info .card-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin: 0.7rem 0;
+}
+
+.card-info .card-precis .card-price {
+  font-size: 2rem;
+  margin-right: 6rem;
+}
+
+.card-info .card-precis .card-icon {
+  position: relative;
+  top: 1px;
+  border: none;
+  font-size: 2rem;
+}
+
+.card-info .card-precis .card-icon:last-child {
+  margin-left: 1rem;
+}
+
 /* section-wish */
 /* section-cart */
 /* footer */
@@ -233,6 +301,11 @@
   }
   .new-box .new-box-list {
     width: 13rem;
+  }
+
+  /* section-goods */
+  .goods-page .sec-top .goods-desc {
+    font-size: 1.7rem;
   }
 }
 
@@ -315,6 +388,27 @@
     width: 25rem;
     margin-right: 4rem;
   }
+
+  /* section-goods */
+  .goods-page .sec-top .goods-desc {
+    font-size: 4rem;
+  }
+
+  .goods-page .goods-container {
+    justify-content: space-around;
+  }
+
+  .goods-container .goods-card {
+    width: 40%;
+  }
+  .card-info .card-precis .card-price {
+    font-size: 2.3rem;
+  }
+
+  .card-info .card-precis .card-icon {
+    top: 2px;
+    font-size: 2.5rem;
+  }
 }
 
 /* desktop */
@@ -362,5 +456,23 @@
 
   .new-page .new-box::-webkit-scrollbar {
     display: none;
+  }
+
+  /* section-goods */
+  .card-info .card-precis .card-icon {
+    top: 3px;
+    font-size: 2.5rem;
+  }
+
+  .goods-page {
+    padding: 10rem 7rem;
+  }
+
+  .goods-page .sec-top .goods-desc {
+    font-size: 3rem;
+  }
+
+  .goods-container .goods-card {
+    width: 28%;
   }
 }
