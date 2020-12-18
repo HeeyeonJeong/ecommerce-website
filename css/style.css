@@ -289,9 +289,50 @@
   margin-left: 1rem;
 }
 
-/* section-wish */
-/* section-cart */
 /* footer */
+.info-page {
+  background-color: black;
+  height: 23rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-page .inner-info-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.list-info + .list-info {
+  margin-left: 0.5rem;
+}
+
+.list-info + .list-info::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 11px;
+  background-color: white;
+  vertical-align: -1px;
+  margin: 0 8px;
+}
+
+.info-page .inner-info-box .list-info .info {
+  color: white;
+}
+
+.footer-tit {
+  font-weight: bold;
+}
+
+.info-page .inner-copyright {
+  color: white;
+  font-size: 1.3rem;
+  text-align: center;
+}
 
 /* iPhone 5 */
 @media only screen and (max-width: 375px) {
@@ -332,6 +373,15 @@
   /* section-goods */
   .goods-page .sec-top .goods-desc {
     font-size: 1.7rem;
+  }
+
+  /* footer */
+  .info-page .inner-info-box {
+    font-size: 1.2rem;
+  }
+
+  .info-page .inner-copyright {
+    font-size: 1.1rem;
   }
 }
 
@@ -446,6 +496,18 @@
     top: 2px;
     font-size: 2.5rem;
   }
+  /* footer */
+  .info-page {
+    height: 30rem;
+  }
+
+  .info-page .inner-info-box {
+    font-size: 2.4rem;
+  }
+
+  .info-page .inner-copyright {
+    font-size: 2.1rem;
+  }
 }
 
 /* desktop */
@@ -517,5 +579,18 @@
 
   .goods-container .goods-card {
     width: 28%;
+  }
+
+  /* footer */
+  .info-page {
+    height: 23rem;
+  }
+
+  .info-page .inner-info-box {
+    font-size: 2rem;
+  }
+
+  .info-page .inner-copyright {
+    font-size: 1.7rem;
   }
 }
