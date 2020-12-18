@@ -203,11 +203,27 @@
 }
 
 .goods-page .sec-top {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .goods-page .sec-top .goods-desc {
   font-size: 2.2rem;
+}
+
+.goods-page .goods-sort {
+  margin-bottom: 5rem;
+  text-align: center;
+}
+
+.goods-page .goods-sort .goods-item {
+  background-color: black;
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 5px;
+  width: 13rem;
+  height: 2rem;
+  font-size: 1.8rem;
 }
 
 .goods-page .goods-container {
@@ -395,6 +411,12 @@
     font-size: 4rem;
   }
 
+  .goods-page .goods-sort .goods-item {
+    width: 28rem;
+    height: 4rem;
+    font-size: 3rem;
+  }
+
   .goods-page .goods-container {
     justify-content: space-around;
   }
@@ -467,6 +489,12 @@
 
   .goods-page {
     padding: 10rem 7rem;
+  }
+
+  .goods-page .goods-sort .goods-item {
+    width: 16rem;
+    height: 3rem;
+    font-size: 1.8rem;
   }
 
   .goods-page .sec-top .goods-desc {

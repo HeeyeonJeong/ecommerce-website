@@ -1,128 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- icon -->
-    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <!-- font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <title>ShoesMall</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="top">
-        <nav class="top-nav">
-            <button type="button" class="top-nav-modal">
-                <i class='bx bxs-grid'></i>
-            </button>
-            <a href="index.html" class="top-title">SHOES</a>
-            <a href="cart.html" class="top-nav-cart">
-                <i class='bx bx-cart'></i>
-            </a>
-            <div class="top-category">
-                <ul class="category-box">
-                    <li class="category-item"><a href="index.html#new">New</a></li>
-                    <li class="category-item"><a href="index.html#goods">Goods</a></li>
-                    <li class="category-item"><a href="wishlist.html">Wish</a></li>
-                    <li class="category-item"><a href="cart.html">Cart</a></li>
-                </ul>
-            </div>
-        </nav>
-        <div class="top-nav-category">
-            <ul class="category-box">
-                <li class="category-item"><a href="index.html#new">New</a></li>
-                <li class="category-item"><a href="index.html#goods">Goods</a></li>
-                <li class="category-item"><a href="wishlist.html">Wish</a></li>
-                <li class="category-item"><a href="cart.html">Cart</a></li>
-            </ul>
-            <button type="button" class="category-close">
-                <i class='bx bx-x' style='color:#ffffff'></i>
-            </button>
+      <nav class="top-nav">
+        <button type="button" class="top-nav-modal">
+          <i class="bx bxs-grid"></i>
+        </button>
+        <a href="index.html" class="top-title">SHOES</a>
+        <a href="cart.html" class="top-nav-cart">
+          <i class="bx bx-cart"></i>
+        </a>
+        <div class="top-category">
+          <ul class="category-box">
+            <li class="category-item"><a href="index.html#new">New</a></li>
+            <li class="category-item"><a href="index.html#goods">Goods</a></li>
+            <li class="category-item"><a href="wishlist.html">Wish</a></li>
+            <li class="category-item"><a href="cart.html">Cart</a></li>
+          </ul>
         </div>
+      </nav>
+      <div class="top-nav-category">
+        <ul class="category-box">
+          <li class="category-item"><a href="index.html#new">New</a></li>
+          <li class="category-item"><a href="index.html#goods">Goods</a></li>
+          <li class="category-item"><a href="wishlist.html">Wish</a></li>
+          <li class="category-item"><a href="cart.html">Cart</a></li>
+        </ul>
+        <button type="button" class="category-close">
+          <i class="bx bx-x" style="color: #ffffff"></i>
+        </button>
+      </div>
     </header>
-    
+
     <!-- landing Page -->
     <section id="home" class="home">
-        <div class="landing">
-            <div class="landing-image-box">
-                <img src="./assets/shoes_pink.png" alt="shoes-image">
-            </div>
-            <div class="landing-desc-box">
-                <div class="sec-top">
-                    <h2 class="sec-tit">EIR MAX - APS - 200</h2>
-                    <p class="sec-desc">shoes life style</p>
-                </div>
-                <button type="button" class="landing-desc-btn">More</button>        
-            </div>
+      <div class="landing">
+        <div class="landing-image-box">
+          <img src="./assets/shoes_pink.png" alt="shoes-image" />
         </div>
+        <div class="landing-desc-box">
+          <div class="sec-top">
+            <h2 class="sec-tit">EIR MAX - APS - 200</h2>
+            <p class="sec-desc">shoes life style</p>
+          </div>
+          <button type="button" class="landing-desc-btn">More</button>
+        </div>
+      </div>
     </section>
 
     <!-- new item-->
     <section id="new" class="new-page">
-        <div class="sec-top new-top">
-            <h1 class="sec-tit new-tit">New Item</h1>
-            <p class="sec-desc">Look for new items</p>
-        </div>
-        <ul class="new-box">
-            <li class="new-box-list">
-                <a href="#" class="new-item-link">
-                    <img src="./assets/shoes_white3.png" alt="new goods" class="new-item">
-                </a>
-            </li>
-            <li class="new-box-list">
-                <a href="#" class="new-item-link">
-                    <img src="./assets/shoes_white2.png" alt="new goods" class="new-item">
-                </a>
-                
-            </li>
-            <li class="new-box-list">
-                <a href="#" class="new-item-link">
-                    <img src="./assets/shoes_blue.png" alt="new goods" class="new-item">
-                </a>
-            </li>
-            <li class="new-box-list">
-                <a href="#" class="new-item-link">
-                    <img src="./assets/shoes_black.png" alt="new goods" class="new-item">
-                </a>
-            </li>
-            <li class="new-box-list">
-                <a href="#" class="new-item-link">
-                    <img src="./assets/shoes_yellow2.png" alt="new goods" class="new-item">
-                </a>
-            </li>
-            <li class="new-box-list">
-                <a href="#" class="new-item-link">
-                    <img src="./assets/shoes_red3.png" alt="new goods" class="new-item">
-                </a>
-            </li>
-            <li class="new-box-list">
-                <a href="#" class="new-item-link">
-                    <img src="./assets/shoes_green.png" alt="new goods" class="new-item">
-                </a>
-            </li>
-            <li class="new-box-list">
-                <a href="#" class="new-item-link">
-                    <img src="./assets/shoes_pink.png" alt="new goods" class="new-item">
-                </a>
-            </li>
-        </ul>
+      <div class="sec-top new-top">
+        <h1 class="sec-tit new-tit">New Item</h1>
+        <p class="sec-desc">Look for new items</p>
+      </div>
+      <ul class="new-box">
+        <li class="new-box-list">
+          <a href="#" class="new-item-link">
+            <img
+              src="./assets/shoes_white3.png"
+              alt="new goods"
+              class="new-item"
+            />
+          </a>
+        </li>
+        <li class="new-box-list">
+          <a href="#" class="new-item-link">
+            <img
+              src="./assets/shoes_white2.png"
+              alt="new goods"
+              class="new-item"
+            />
+          </a>
+        </li>
+        <li class="new-box-list">
+          <a href="#" class="new-item-link">
+            <img
+              src="./assets/shoes_blue.png"
+              alt="new goods"
+              class="new-item"
+            />
+          </a>
+        </li>
+        <li class="new-box-list">
+          <a href="#" class="new-item-link">
+            <img
+              src="./assets/shoes_black.png"
+              alt="new goods"
+              class="new-item"
+            />
+          </a>
+        </li>
+        <li class="new-box-list">
+          <a href="#" class="new-item-link">
+            <img
+              src="./assets/shoes_yellow2.png"
+              alt="new goods"
+              class="new-item"
+            />
+          </a>
+        </li>
+        <li class="new-box-list">
+          <a href="#" class="new-item-link">
+            <img
+              src="./assets/shoes_red3.png"
+              alt="new goods"
+              class="new-item"
+            />
+          </a>
+        </li>
+        <li class="new-box-list">
+          <a href="#" class="new-item-link">
+            <img
+              src="./assets/shoes_green.png"
+              alt="new goods"
+              class="new-item"
+            />
+          </a>
+        </li>
+        <li class="new-box-list">
+          <a href="#" class="new-item-link">
+            <img
+              src="./assets/shoes_pink.png"
+              alt="new goods"
+              class="new-item"
+            />
+          </a>
+        </li>
+      </ul>
     </section>
 
     <!-- goods -->
     <main id="goods" class="goods-page">
-        <div class="sec-top">
-            <h1 class="sec-tit">Goods</h1>
-            <p class="sec-desc goods-desc">Choose the product you like</p>    
-        </div>
-        <ul class="goods-container">
-        </ul>
+      <div class="sec-top">
+        <h1 class="sec-tit">Goods</h1>
+        <p class="sec-desc goods-desc">Choose the product you like</p>
+      </div>
+      <div class="goods-sort">
+        <select name="color-choice" class="goods-item color-item">
+          <option selected>All Color</option>
+          <option
+            data-key="color"
+            data-value="black"
+            class="choice-sort select-black"
+          >
+            Black
+          </option>
+          <option
+            data-key="color"
+            data-value="blue"
+            class="choice-sort select-blue"
+          >
+            Blue
+          </option>
+          <option
+            data-key="color"
+            data-value="brown"
+            class="choice-sort select-brown"
+          >
+            Brown
+          </option>
+          <option
+            data-key="color"
+            data-value="green"
+            class="choice-sort select-green"
+          >
+            Green
+          </option>
+          <option
+            data-key="color"
+            data-value="grey"
+            class="choice-sort select-grey"
+          >
+            Grey
+          </option>
+          <option
+            data-key="color"
+            data-value="pink"
+            class="choice-sort select-pink"
+          >
+            Pink
+          </option>
+          <option
+            data-key="color"
+            data-value="purple"
+            class="choice-sort select-purple"
+          >
+            Purple
+          </option>
+          <option
+            data-key="color"
+            data-value="red"
+            class="choice-sort select-red"
+          >
+            Red
+          </option>
+          <option
+            data-key="color"
+            data-value="white"
+            class="choice-sort select-white"
+          >
+            White
+          </option>
+          <option
+            data-key="color"
+            data-value="yellow"
+            class="choice-sort select-yellow"
+          >
+            Yellow
+          </option>
+        </select>
+      </div>
+      <ul class="goods-container"></ul>
     </main>
 
     <footer></footer>
     <script src="./js/main.js"></script>
     <script src="./js/loadItem.js"></script>
-</body>
+  </body>
 </html>

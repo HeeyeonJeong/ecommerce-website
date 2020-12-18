@@ -2,19 +2,19 @@ const itemContainer = document.querySelector(".goods-container");
 
 //JSON fetch
 function loadItems() {
-    return fetch("./data/data.json")
-      .then((response) => response.json())
-      .then((json) => json.shoesBox);
+  return fetch("./data/data.json")
+    .then((response) => response.json())
+    .then((json) => json.shoesBox);
 }
 
 //list출력
-function displayItems(shoesBox){
-    itemContainer.innerHTML = shoesBox.map(shoes => createHTML(shoes)).join("");
+function displayItems(shoesBox) {
+  itemContainer.innerHTML = shoesBox.map((shoes) => createHTML(shoes)).join("");
 }
 
 //list HTML
-function createHTML(shoes){
-    return`
+function createHTML(shoes) {
+  return `
     <li class="goods-card">
         <a href="#" class="goods-item-link">
             <div class="card-img-box">
@@ -35,7 +35,27 @@ function createHTML(shoes){
 `;
 }
 
-loadItems()
-  .then((shoesBox) => {
-    displayItems(shoesBox);
-  });
+//user selected color
+function selectHandler(shoesBox) {
+  const sortContainer = document.querySelector(".goods-sort");
+  sortContainer.addEventListener("change", (e) =>
+    selectColorFilter(e, shoesBox)
+  );
+}
+
+//color filtering
+function selectColorFilter(e, shoesBox) {
+  const choiceSortBox = e.target;
+  const userChoiceColor =
+    choiceSortBox.options[choiceSortBox.selectedIndex].dataset;
+  const userSelect = shoesBox.filter(
+    (shoes) => shoes[userChoiceColor.key] === userChoiceColor.value
+  );
+  displayItems(userSelect);
+}
+
+//main
+loadItems().then((shoesBox) => {
+  displayItems(shoesBox);
+  selectHandler(shoesBox);
+});
