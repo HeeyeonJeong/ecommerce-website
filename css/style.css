@@ -246,23 +246,23 @@
   flex-flow: wrap;
 }
 
-.goods-page .goods-container .goods-card {
+.goods-card {
   padding: 2rem;
   background-color: rgb(241, 241, 241);
   border-radius: 10px;
   margin-bottom: 3.5rem;
 }
 
-.goods-card .goods-item-link .card-img-box {
+.goods-card .card-img-box {
   width: 100%;
 }
 
-.goods-card .goods-item-link .card-img-box .card-img {
+.goods-card .card-img-box .card-img {
   display: block;
   width: inherit;
 }
 
-.goods-card .goods-item-link .card-info {
+.goods-card .card-info {
   text-align: center;
 }
 
@@ -274,7 +274,7 @@
 
 .card-info .card-precis .card-price {
   font-size: 2rem;
-  margin-right: 6rem;
+  margin-right: 4rem;
 }
 
 .card-info .card-precis .card-icon {
@@ -285,7 +285,7 @@
   background-color: transparent;
 }
 
-.card-info .card-precis .card-icon:last-child {
+.card-info .card-precis .card-icon {
   margin-left: 1rem;
 }
 

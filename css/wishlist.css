@@ -1,0 +1,39 @@
+.wish-page {
+  padding: 10rem 3.5rem;
+}
+
+.wish-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+}
+
+.wish-page .wish-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: wrap;
+}
+
+@media only screen and (min-width: 768px) {
+  .wish-page .wish-container {
+    justify-content: space-around;
+  }
+  .wish-page .wish-container .goods-card {
+    width: 40%;
+    justify-content: space-around;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .wish-page .wish-container .goods-card {
+    width: 40%;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  .wish-page .wish-container .goods-card {
+    width: 28%;
+  }
+}
