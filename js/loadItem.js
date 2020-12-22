@@ -1,14 +1,29 @@
 const itemContainer = document.querySelector(".goods-container");
 const wishContainer = document.querySelector(".wish-container");
 
+//wish-storage
+let saveWishGoods = localStorage.getItem("wishList")
+  ? JSON.parse(localStorage.getItem("wishList"))
+  : [];
+
 //JSON fetch
 async function loadItems() {
   const response = await fetch("./data/data.json");
   const json = await response.json();
+  //localStrage에 wishgoods가 존재하는 경우
+  if (saveWishGoods) {
+    for (let i = 0; i < json.shoesBox.length; i++) {
+      saveWishGoods.forEach((goods) => {
+        if (goods.id === json.shoesBox[i].id) {
+          json.shoesBox[i].wish = true;
+        }
+      });
+    }
+  }
   return json.shoesBox;
 }
 
-//list출력
+//list 출력
 function displayItems(shoesBox) {
   if (itemContainer !== null) {
     itemContainer.innerHTML = shoesBox
@@ -31,9 +46,19 @@ function createHTML(shoes) {
           </div>
           <div class="card-precis">
               <span class="card-price">${shoes.price}</span>
-              <button type="button" data-id=${shoes.id} class="card-icon like-icon"><i class='bx bx-heart'></i></button>
-              <button type="button" data-id=${shoes.id} class="card-icon cart-icon"><i class='bx bx-cart'></i></button>
-              <a href="wishlist.html" data-id=${shoes.id} class="card-icon more-icon"><i class='bx bxs-plus-square'></i></a>
+              <button type="button" data-id=${
+                shoes.id
+              } class="card-icon like-icon">${
+    shoes.wish
+      ? `<i class='bx bxs-heart' style='color:#d64040'></i>`
+      : `<i class='bx bx-heart'></i>`
+  }</button>
+              <button type="button" data-id=${
+                shoes.id
+              } class="card-icon cart-icon"><i class='bx bx-cart'></i></button>
+              <a href="wishlist.html" data-id=${
+                shoes.id
+              } class="card-icon more-icon"><i class='bx bxs-plus-square'></i></a>
           </div>               
       </div>        
     </li>
@@ -41,24 +66,20 @@ function createHTML(shoes) {
 }
 
 //save wish
-function saveWish(wishObj) {
-  localStorage.setItem("wishList", JSON.stringify(wishObj));
+function saveWish(saveWishGoods) {
+  localStorage.setItem("wishList", JSON.stringify(saveWishGoods));
 }
 
 // paint wish list
-function paintWishPage() {
+function paintWishPage(shoesBox) {
   const loadWishGoods = localStorage.getItem("wishList");
   if (wishContainer !== null) {
     wishContainer.innerHTML = JSON.parse(loadWishGoods)
       .map((shoes) => createHTML(shoes))
       .join("");
   }
+  loadWish(shoesBox);
 }
-
-//wish-storage
-let wishObj = localStorage.getItem("wishList")
-  ? JSON.parse(localStorage.getItem("wishList"))
-  : [];
 
 //wish goods
 function loadWish(shoesBox) {
@@ -66,13 +87,26 @@ function loadWish(shoesBox) {
   likebtns.forEach((likebtn) => {
     likebtn.addEventListener("click", (e) => {
       const goodsBtn = e.target.parentNode;
-      const userWish = shoesBox.find((shoes) => {
-        if (shoes.id === parseInt(goodsBtn.dataset.id)) {
-          return shoes;
-        }
-      });
-      wishObj.push(userWish);
-      saveWish(wishObj);
+      if (goodsBtn) {
+        shoesBox.find((shoes) => {
+          if (shoes.id === parseInt(goodsBtn.dataset.id)) {
+            if (shoes.wish) {
+              const cleanWish = saveWishGoods.findIndex((item) => {
+                return item.id === parseInt(goodsBtn.dataset.id);
+              });
+              saveWishGoods.splice(cleanWish, 1);
+              shoes.wish = false;
+              goodsBtn.innerHTML = `<i class='bx bx-heart'></i>`;
+              return saveWishGoods;
+            } else {
+              shoes.wish = true;
+              goodsBtn.innerHTML = `<i class='bx bxs-heart' style='color:#d64040'></i>`;
+              return saveWishGoods.push(shoes);
+            }
+          }
+        });
+      }
+      saveWish(saveWishGoods);
     });
   });
 }
@@ -102,5 +136,5 @@ function selectColorFilter(e, shoesBox) {
 loadItems().then((shoesBox) => {
   displayItems(shoesBox);
   selectHandler(shoesBox);
-  paintWishPage();
+  paintWishPage(shoesBox);
 });

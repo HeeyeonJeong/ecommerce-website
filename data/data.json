@@ -1,137 +1,175 @@
 {
-    "shoesBox": [
-      {
-        "id": 1,
-        "productName": "Letro Resin Col",
-        "price": 105000,
-        "color": "black",
-        "image": "./assets/shoes_black.png"
-      },
-      {
-        "id": 2,
-        "productName": "Letro Resin Col V2",
-        "price": 135000,
-        "color": "black",
-        "image": "./assets/shoes_black2.png"
-      },
-      {
-        "id": 3,
-        "productName": "Blue Shin woe",
-        "price": 120000,
-        "color": "blue",
-        "image": "./assets/shoes_blue.png"
-      },
-      {
-        "id": 4,
-        "productName": "Bron mercy Wep V2",
-        "price": 110000,
-        "color": "brown",
-        "image": "./assets/shoes_brown2.png"
-      },
-      {
-        "id": 5,
-        "productName": "Lorem Rain Nur",
-        "price": 156000,
-        "color": "green",
-        "image": "./assets/shoes_green.png"
-      },
-      {
-        "id": 6,
-        "productName": "Lorem Rain Nur V2",
-        "price": 190000,
-        "color": "green",
-        "image": "./assets/shoes_green2.png"
-      },            
-      {
-        "id": 7,
-        "productName": "Find Like Source",
-        "price": 160000,
-        "color": "grey",
-        "image": "./assets/shoes_grey.png"
-      },      
-      {
-        "id": 8,
-        "productName": "Air Zoom Pegasus",
-        "price": 185000,
-        "color": "pink",
-        "image": "./assets/shoes_pink.png"
-      },
-      {
-        "id": 9,
-        "productName": "Air Zoom Pegasus V2",
-        "price": 190000,
-        "color": "pink",
-        "image": "./assets/shoes_pink2.png"
-      },      
-      {
-        "id": 10,
-        "productName": "Air Zoom Pegasus v3",
-        "price": 215000,
-        "color": "pink",
-        "image": "./assets/shoes_pink3.png"
-      },      
-      {
-        "id": 11,
-        "productName": "Break son",
-        "price": 265000,
-        "color": "purple",
-        "image": "./assets/shoes_purple.png"
-      },      
-      {
-        "id": 12,
-        "productName": "Zoom Fly Target",
-        "price": 138000,
-        "color": "red",
-        "image": "./assets/shoes_red.png"
-      },      
-      {
-        "id": 13,
-        "productName": "Zoom Fly Target V2",
-        "price": 183000,
-        "color": "red",
-        "image": "./assets/shoes_red2.png"
-      },      
-      {
-        "id": 14,
-        "productName": "Zoom Fly Target V3",
-        "price": 175000,
-        "color": "red",
-        "image": "./assets/shoes_red3.png"
-      },     
-      {
-        "id": 15,
-        "productName": "Next Bron Soul",
-        "price": 194000,
-        "color": "white",
-        "image": "./assets/shoes_white.png"
-      },      
-      {
-        "id": 16,
-        "productName": "Next Bron Soul V2",
-        "price": 240000,
-        "color": "white",
-        "image": "./assets/shoes_white2.png"
-      },      
-      {
-        "id": 17,
-        "productName": "Next Bron Soul V3",
-        "price": 153000,
-        "color": "white",
-        "image": "./assets/shoes_white3.png"
-      },      
-      {
-        "id": 18,
-        "productName": "Troll Shine Bolt",
-        "price": 199000,
-        "color": "yellow",
-        "image": "./assets/shoes_yellow.png"
-      },      
-      {
-        "id": 19,
-        "productName": "Troll Shine Bolt V2",
-        "price": 200000,
-        "color": "yellow",
-        "image": "./assets/shoes_yellow2.png"
-      }
-    ]
+  "shoesBox": [
+    {
+      "id": 1,
+      "productName": "Letro Resin Col",
+      "price": 105000,
+      "color": "black",
+      "image": "./assets/shoes_black.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 2,
+      "productName": "Letro Resin Col V2",
+      "price": 135000,
+      "color": "black",
+      "image": "./assets/shoes_black2.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 3,
+      "productName": "Blue Shin woe",
+      "price": 120000,
+      "color": "blue",
+      "image": "./assets/shoes_blue.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 4,
+      "productName": "Bron mercy Wep V2",
+      "price": 110000,
+      "color": "brown",
+      "image": "./assets/shoes_brown2.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 5,
+      "productName": "Lorem Rain Nur",
+      "price": 156000,
+      "color": "green",
+      "image": "./assets/shoes_green.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 6,
+      "productName": "Lorem Rain Nur V2",
+      "price": 190000,
+      "color": "green",
+      "image": "./assets/shoes_green2.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 7,
+      "productName": "Find Like Source",
+      "price": 160000,
+      "color": "grey",
+      "image": "./assets/shoes_grey.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 8,
+      "productName": "Air Zoom Pegasus",
+      "price": 185000,
+      "color": "pink",
+      "image": "./assets/shoes_pink.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 9,
+      "productName": "Air Zoom Pegasus V2",
+      "price": 190000,
+      "color": "pink",
+      "image": "./assets/shoes_pink2.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 10,
+      "productName": "Air Zoom Pegasus v3",
+      "price": 215000,
+      "color": "pink",
+      "image": "./assets/shoes_pink3.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 11,
+      "productName": "Break son",
+      "price": 265000,
+      "color": "purple",
+      "image": "./assets/shoes_purple.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 12,
+      "productName": "Zoom Fly Target",
+      "price": 138000,
+      "color": "red",
+      "image": "./assets/shoes_red.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 13,
+      "productName": "Zoom Fly Target V2",
+      "price": 183000,
+      "color": "red",
+      "image": "./assets/shoes_red2.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 14,
+      "productName": "Zoom Fly Target V3",
+      "price": 175000,
+      "color": "red",
+      "image": "./assets/shoes_red3.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 15,
+      "productName": "Next Bron Soul",
+      "price": 194000,
+      "color": "white",
+      "image": "./assets/shoes_white.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 16,
+      "productName": "Next Bron Soul V2",
+      "price": 240000,
+      "color": "white",
+      "image": "./assets/shoes_white2.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 17,
+      "productName": "Next Bron Soul V3",
+      "price": 153000,
+      "color": "white",
+      "image": "./assets/shoes_white3.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 18,
+      "productName": "Troll Shine Bolt",
+      "price": 199000,
+      "color": "yellow",
+      "image": "./assets/shoes_yellow.png",
+      "wish": false,
+      "cart": false
+    },
+    {
+      "id": 19,
+      "productName": "Troll Shine Bolt V2",
+      "price": 200000,
+      "color": "yellow",
+      "image": "./assets/shoes_yellow2.png",
+      "wish": false,
+      "cart": false
+    }
+  ]
 }
