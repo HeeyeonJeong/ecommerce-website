@@ -81,6 +81,13 @@ function paintWishPage(shoesBox) {
   loadWish(shoesBox);
 }
 
+//delete wish list
+function deletWishPage(cleanWish) {
+  if (wishContainer !== null) {
+    wishContainer.removeChild(wishContainer.children[cleanWish]);
+  }
+}
+
 //wish goods
 function loadWish(shoesBox) {
   const likebtns = document.querySelectorAll(".like-icon");
@@ -97,6 +104,7 @@ function loadWish(shoesBox) {
               saveWishGoods.splice(cleanWish, 1);
               shoes.wish = false;
               goodsBtn.innerHTML = `<i class='bx bx-heart'></i>`;
+              deletWishPage(cleanWish);
               return saveWishGoods;
             } else {
               shoes.wish = true;
