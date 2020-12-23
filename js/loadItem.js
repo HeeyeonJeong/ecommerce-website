@@ -1,5 +1,6 @@
 const itemContainer = document.querySelector(".goods-container");
 const wishContainer = document.querySelector(".wish-container");
+const wishEmpty = document.querySelector(".empty");
 
 //wish-storage
 let saveWishGoods = localStorage.getItem("wishList")
@@ -77,6 +78,9 @@ function paintWishPage(shoesBox) {
     wishContainer.innerHTML = JSON.parse(loadWishGoods)
       .map((shoes) => createHTML(shoes))
       .join("");
+    if (wishContainer.children.length !== 0) {
+      wishEmpty.classList.add("hidden");
+    }
   }
   loadWish(shoesBox);
 }
@@ -85,6 +89,9 @@ function paintWishPage(shoesBox) {
 function deletWishPage(cleanWish) {
   if (wishContainer !== null) {
     wishContainer.removeChild(wishContainer.children[cleanWish]);
+  }
+  if (wishContainer.children.length === 0) {
+    wishEmpty.classList.remove("hidden");
   }
 }
 
