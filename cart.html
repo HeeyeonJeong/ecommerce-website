@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/cart.css" />
     <link
       href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
       rel="stylesheet"
@@ -47,6 +48,41 @@
         </button>
       </div>
     </header>
+
+    <!-- cart -->
+    <section class="cart-page">
+      <!-- <div class="empty">
+        <p>Your cart is empty</p>
+      </div> -->
+      <ul class="cart-container"></ul>
+      <div class="cart-total">
+        <dl class="total">
+          <dt class="total-title">Total</dt>
+          <dd class="total-price">105000</dd>
+        </dl>
+      </div>
+      <a href="#" class="total-order">Order selected Items</a>
+    </section>
+
+    <!-- footer -->
+    <footer class="info-page">
+      <ul class="inner-info-box">
+        <li class="list-info">
+          <a href="/" class="info footer-tit">SHOES</a>
+        </li>
+        <li class="list-info">
+          <a href="#" class="info">Privacy Statement</a>
+        </li>
+        <li class="list-info">
+          <a href="#" class="info">Terms of service</a>
+        </li>
+      </ul>
+      <p class="inner-copyright">
+        Copyright &copy; Jeong Hee Yeon. All Rights Reserved.
+      </p>
+    </footer>
+
     <script src="./js/main.js"></script>
+    <script src="./js/loadItem.js"></script>
   </body>
 </html>

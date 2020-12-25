@@ -47,3 +47,9 @@ button:focus {
 li {
   list-style: none;
 }
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
