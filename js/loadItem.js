@@ -74,7 +74,7 @@ function saveWish(saveWishGoods) {
 }
 
 // paint wish list
-function paintWishPage(shoesBox) {
+function paintWishPage() {
   const loadWishGoods = localStorage.getItem("wishList");
   if (wishContainer !== null) {
     wishContainer.innerHTML = JSON.parse(loadWishGoods)
@@ -84,7 +84,6 @@ function paintWishPage(shoesBox) {
       wishEmpty.classList.add("hidden");
     }
   }
-  loadWish(shoesBox);
 }
 
 //delete wish list
@@ -227,6 +226,6 @@ function selectColorFilter(e, shoesBox) {
 loadItems().then((shoesBox) => {
   displayItems(shoesBox);
   selectHandler(shoesBox);
-  paintWishPage(shoesBox);
+  paintWishPage();
   paintCartPage();
 });
