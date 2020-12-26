@@ -1,6 +1,7 @@
 const itemContainer = document.querySelector(".goods-container");
 const wishContainer = document.querySelector(".wish-container");
 const wishEmpty = document.querySelector(".empty");
+const cartContainer = document.querySelector(".cart-container");
 
 //wish-storage
 let saveWishGoods = localStorage.getItem("wishList")
@@ -32,6 +33,7 @@ function displayItems(shoesBox) {
       .join("");
   }
   loadWish(shoesBox);
+  loadCart(shoesBox);
 }
 
 //list HTML
@@ -122,6 +124,43 @@ function loadWish(shoesBox) {
         });
       }
       saveWish(saveWishGoods);
+    });
+  });
+}
+
+//save cart
+function saveCart(saveCartGoods) {
+  localStorage.setItem("CartList", JSON.stringify(saveCartGoods));
+}
+
+//cart-storage
+let saveCartGoods = localStorage.getItem("CartList")
+  ? JSON.parse(localStorage.getItem("CartList"))
+  : [];
+
+//cart goods
+function loadCart(shoesBox) {
+  const cartbtns = document.querySelectorAll(".cart-icon");
+  cartbtns.forEach((cartbtn) => {
+    cartbtn.addEventListener("click", (e) => {
+      const goodsCart = e.target.parentNode;
+      if (goodsCart) {
+        shoesBox.find((shoes) => {
+          if (shoes.id === parseInt(goodsCart.dataset.id)) {
+            if (shoes.cart) {
+              //이미 장바구니에 들어가있는 경우
+              //수정사항: landing페이지에서 cart 재클릭 금지,
+              //재클릭시 - alert창 '이미 장바구니에 들어가있는 상품입니다.'
+              //cart-page에서만 삭제가능
+            } else {
+              //장바구니 추가
+              shoes.cart = true;
+              return saveCartGoods.push(shoes);
+            }
+          }
+        });
+      }
+      saveCart(saveCartGoods);
     });
   });
 }
