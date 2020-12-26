@@ -128,14 +128,51 @@ function loadWish(shoesBox) {
   });
 }
 
+//createHTML - cart
+function cartCreateHTML(shoes) {
+  return `
+  <li class="cart-goods">
+    <div class="goods-thumb">
+      <img src="${shoes.image}" alt="${shoes.productName}" />
+    </div>
+    <div class="cart-info-box">
+      <div class="item-info">
+        <div class="info-name">${shoes.productName}</div>
+        <div class="info-price">${shoes.price}</div>
+        <button class="item-remove" type="button" data-id=${shoes.id}>Remove</button>
+      </div>
+      <div class="item-count">
+        <button class="count-minus" type="button">
+          <i class="bx bx-minus"></i>
+        </button>
+        <span class="count">1</span>
+        <button class="count-plus" type="button">
+          <i class="bx bx-plus"></i>
+        </button>
+      </div>
+    </div>
+  </li>`;
+}
+
 //save cart
 function saveCart(saveCartGoods) {
-  localStorage.setItem("CartList", JSON.stringify(saveCartGoods));
+  localStorage.setItem("cartList", JSON.stringify(saveCartGoods));
+}
+
+// paint wish list
+function paintCartPage() {
+  const loadCartGoods = localStorage.getItem("cartList");
+  console.log(loadCartGoods);
+  if (cartContainer !== null) {
+    cartContainer.innerHTML = JSON.parse(loadCartGoods)
+      .map((shoes) => cartCreateHTML(shoes))
+      .join("");
+  }
 }
 
 //cart-storage
-let saveCartGoods = localStorage.getItem("CartList")
-  ? JSON.parse(localStorage.getItem("CartList"))
+let saveCartGoods = localStorage.getItem("cartList")
+  ? JSON.parse(localStorage.getItem("cartList"))
   : [];
 
 //cart goods
@@ -191,4 +228,5 @@ loadItems().then((shoesBox) => {
   displayItems(shoesBox);
   selectHandler(shoesBox);
   paintWishPage(shoesBox);
+  paintCartPage();
 });
