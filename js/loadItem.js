@@ -10,40 +10,26 @@ let saveWishGoods = localStorage.getItem("wishList")
   ? JSON.parse(localStorage.getItem("wishList"))
   : [];
 
+//localStrage에 wish/cart goods가 존재하는지 체크
+function storageCheck(json, saveGoods, mode) {
+  if (saveGoods) {
+    for (let i = 0; i < json.shoesBox.length; i++) {
+      saveGoods.forEach((goods) => {
+        if (goods.id === json.shoesBox[i].id) {
+          json.shoesBox[i][mode] = true;
+        }
+      });
+    }
+  }
+}
+
 //JSON fetch
 async function loadItems() {
   const response = await fetch("./data/data.json");
   const json = await response.json();
-  storageWish(json);
-  storageCart(json);
+  storageCheck(json, saveWishGoods, "wish");
+  storageCheck(json, saveCartGoods, "cart");
   return json.shoesBox;
-}
-
-//존재하는 경우 로직 공통으로 refactoring 하기
-//localStrage에 wishgoods가 존재하는 경우
-function storageWish(json) {
-  if (saveWishGoods) {
-    for (let i = 0; i < json.shoesBox.length; i++) {
-      saveWishGoods.forEach((goods) => {
-        if (goods.id === json.shoesBox[i].id) {
-          json.shoesBox[i].wish = true;
-        }
-      });
-    }
-  }
-}
-
-//localStrage에 cartgoods가 존재하는 경우
-function storageCart(json) {
-  if (saveCartGoods) {
-    for (let i = 0; i < json.shoesBox.length; i++) {
-      saveCartGoods.forEach((goods) => {
-        if (goods.id === json.shoesBox[i].id) {
-          json.shoesBox[i].cart = true;
-        }
-      });
-    }
-  }
 }
 
 //list 출력
