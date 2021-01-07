@@ -1,9 +1,8 @@
-import { cartCreateHTML } from "./cartPage.js";
+import { loadCart, paintCartPage, saveCartGoods } from "./cartPage.js";
 
 const itemContainer = document.querySelector(".goods-container");
 const wishContainer = document.querySelector(".wish-container");
 const wishEmpty = document.querySelector(".empty");
-const cartContainer = document.querySelector(".cart-container");
 
 //wish-storage
 let saveWishGoods = localStorage.getItem("wishList")
@@ -42,7 +41,7 @@ function displayItems(shoesBox) {
   loadWish(shoesBox);
 }
 
-//list HTML
+//createHTML - wish
 function createHTML(shoes) {
   return `
     <li class="goods-card">
@@ -79,7 +78,7 @@ function saveWish(saveWishGoods) {
   localStorage.setItem("wishList", JSON.stringify(saveWishGoods));
 }
 
-// paint wish list
+// wish-page paint
 function paintWishPage(shoesBox) {
   const loadWishGoods = localStorage.getItem("wishList");
   if (wishContainer !== null) {
@@ -95,7 +94,7 @@ function paintWishPage(shoesBox) {
 }
 
 //delete wish list
-function deletWishPage(cleanWish) {
+function deletWish(cleanWish) {
   if (wishContainer !== null) {
     wishContainer.removeChild(wishContainer.children[cleanWish]);
     if (wishContainer.children.length === 0) {
@@ -121,7 +120,7 @@ function loadWish(shoesBox) {
               shoes.wish = false;
               goodsBtn.innerHTML = `<i class='bx bx-heart'></i>`;
               console.log("위시리스트 지움");
-              deletWishPage(cleanWish);
+              deletWish(cleanWish);
               return saveWishGoods;
             } else {
               shoes.wish = true;
@@ -133,53 +132,6 @@ function loadWish(shoesBox) {
         });
       }
       saveWish(saveWishGoods);
-    });
-  });
-}
-
-//save cart
-export function saveCart(saveCartGoods) {
-  localStorage.setItem("cartList", JSON.stringify(saveCartGoods));
-}
-
-// cart-page paint
-function paintCartPage() {
-  const loadCartGoods = localStorage.getItem("cartList");
-  if (cartContainer !== null) {
-    cartContainer.innerHTML = JSON.parse(loadCartGoods)
-      .map((shoes) => cartCreateHTML(shoes))
-      .join("");
-  }
-}
-
-//cart-storage
-export let saveCartGoods = localStorage.getItem("cartList")
-  ? JSON.parse(localStorage.getItem("cartList"))
-  : [];
-
-//cart goods
-function loadCart(shoesBox) {
-  const cartbtns = document.querySelectorAll(".cart-icon");
-  cartbtns.forEach((cartbtn) => {
-    cartbtn.addEventListener("click", (e) => {
-      const goodsCart = e.target.parentNode;
-      if (goodsCart) {
-        shoesBox.find((shoes) => {
-          if (shoes.id === parseInt(goodsCart.dataset.id)) {
-            if (saveCartGoods.some((cart) => cart.id === shoes.id)) {
-              console.log("이미 있음");
-              alert("장바구니에 있는 상품입니다.");
-            } else {
-              //장바구니 추가
-              shoes.cart = true;
-              console.log("장바구니 추가");
-              alert("장바구니에 담았습니다.");
-              return saveCartGoods.push(shoes);
-            }
-          }
-        });
-      }
-      saveCart(saveCartGoods);
     });
   });
 }

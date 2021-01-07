@@ -1,9 +1,12 @@
-import { saveCartGoods, saveCart } from "./loadItem.js";
-
 const cartContainer = document.querySelector(".cart-container");
 
+//cart-storage
+export let saveCartGoods = localStorage.getItem("cartList")
+  ? JSON.parse(localStorage.getItem("cartList"))
+  : [];
+
 //createHTML - cart
-export function cartCreateHTML(shoes) {
+function cartCreateHTML(shoes) {
   return `
     <li class="cart-goods">
       <div class="goods-thumb">
@@ -28,10 +31,51 @@ export function cartCreateHTML(shoes) {
     </li>`;
 }
 
-//delete cart
-function deleteCartGoods(e) {
-  const cartRemoveBtns = document.querySelectorAll(".item-remove");
+// cart-page paint
+export function paintCartPage() {
+  const loadCartGoods = localStorage.getItem("cartList");
+  if (cartContainer !== null) {
+    cartContainer.innerHTML = JSON.parse(loadCartGoods)
+      .map((shoes) => cartCreateHTML(shoes))
+      .join("");
+  }
+}
 
+//save cart
+function saveCart(saveCartGoods) {
+  localStorage.setItem("cartList", JSON.stringify(saveCartGoods));
+}
+
+//cart goods
+export function loadCart(shoesBox) {
+  const cartbtns = document.querySelectorAll(".cart-icon");
+  cartbtns.forEach((cartbtn) => {
+    cartbtn.addEventListener("click", (e) => {
+      const goodsCart = e.target.parentNode;
+      if (goodsCart) {
+        shoesBox.find((shoes) => {
+          if (shoes.id === parseInt(goodsCart.dataset.id)) {
+            if (saveCartGoods.some((cart) => cart.id === shoes.id)) {
+              console.log("이미 있음");
+              alert("장바구니에 있는 상품입니다.");
+            } else {
+              //장바구니 추가
+              shoes.cart = true;
+              console.log("장바구니 추가");
+              alert("장바구니에 담았습니다.");
+              return saveCartGoods.push(shoes);
+            }
+          }
+        });
+      }
+      saveCart(saveCartGoods);
+    });
+  });
+}
+
+//delete cart
+function deleteCart(e) {
+  const cartRemoveBtns = document.querySelectorAll(".item-remove");
   cartRemoveBtns.forEach((cartRemoveBtn) => {
     if (e.target === cartRemoveBtn) {
       const cleanWish = saveCartGoods.findIndex((item) => {
@@ -46,9 +90,10 @@ function deleteCartGoods(e) {
   });
 }
 
+//cart-page controller
 function cartListHandler(e) {
   //delete cart
-  deleteCartGoods(e);
+  deleteCart(e);
 }
 
 if (cartContainer !== null) {
