@@ -1,5 +1,7 @@
 const cartContainer = document.querySelector(".cart-container");
 const cartTotalPrice = document.querySelector(".total-price");
+const cartBox = document.querySelector(".cart-container-box");
+const cartEmpty = document.querySelector(".empty");
 
 //cart-storage
 export let saveCartGoods = localStorage.getItem("cartList")
@@ -51,6 +53,10 @@ export function paintCartPage() {
     cartContainer.innerHTML = JSON.parse(loadCartGoods)
       .map((shoes) => cartCreateHTML(shoes))
       .join("");
+    if (cartContainer.children.length !== 0) {
+      cartEmpty.classList.add("hidden");
+      cartBox.classList.remove("hidden");
+    }
   }
   totalPrice();
 }
@@ -103,6 +109,10 @@ function deleteCart(e) {
       totalPrice();
     }
   });
+  if (cartContainer.children.length === 0) {
+    cartEmpty.classList.remove("hidden");
+    cartBox.classList.add("hidden");
+  }
 }
 
 //cart-page controller
