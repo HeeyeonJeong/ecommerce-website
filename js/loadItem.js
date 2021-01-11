@@ -53,7 +53,7 @@ function createHTML(shoes) {
               <p>${shoes.productName}</p>
           </div>
           <div class="card-precis">
-              <span class="card-price">${shoes.price}</span>
+              <span class="card-price">${shoes.price.toLocaleString()}</span>
               <button type="button" data-id=${
                 shoes.id
               } class="card-icon like-icon">${

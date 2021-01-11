@@ -1,4 +1,5 @@
 const cartContainer = document.querySelector(".cart-container");
+const cartTotalPrice = document.querySelector(".total-price");
 
 //cart-storage
 export let saveCartGoods = localStorage.getItem("cartList")
@@ -15,8 +16,10 @@ function cartCreateHTML(shoes) {
       <div class="cart-info-box">
         <div class="item-info">
           <div class="info-name">${shoes.productName}</div>
-          <div class="info-price">${shoes.price}</div>
-          <button class="item-remove" type="button" data-id=${shoes.id}>Remove</button>
+          <div class="info-price">${shoes.price.toLocaleString()}</div>
+          <button class="item-remove" type="button" data-id=${
+            shoes.id
+          }>Remove</button>
         </div>
         <div class="item-count">
           <button class="count-minus" type="button">
@@ -31,6 +34,16 @@ function cartCreateHTML(shoes) {
     </li>`;
 }
 
+//total price
+function totalPrice() {
+  const priceBox = saveCartGoods.reduce((prev, curr) => {
+    return prev + curr.price;
+  }, 0);
+  if (cartTotalPrice) {
+    cartTotalPrice.innerHTML = priceBox.toLocaleString();
+  }
+}
+
 // cart-page paint
 export function paintCartPage() {
   const loadCartGoods = localStorage.getItem("cartList");
@@ -39,6 +52,7 @@ export function paintCartPage() {
       .map((shoes) => cartCreateHTML(shoes))
       .join("");
   }
+  totalPrice();
 }
 
 //save cart
@@ -86,6 +100,7 @@ function deleteCart(e) {
       //cart-page에서 삭제
       cartContainer.removeChild(cartContainer.children[cleanWish]);
       saveCart(saveCartGoods);
+      totalPrice();
     }
   });
 }
