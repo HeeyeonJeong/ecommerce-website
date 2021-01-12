@@ -155,6 +155,7 @@ function selectColorFilter(e, shoesBox) {
     (shoes) => shoes[userChoiceColor.key] === userChoiceColor.value
   );
   displayItems(userSelect);
+  loadCart(userSelect);
 }
 
 //main
