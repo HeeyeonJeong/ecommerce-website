@@ -23,14 +23,23 @@ function cartCreateHTML(shoes) {
             shoes.id
           }>Remove</button>
         </div>
-        <div class="item-count">
-          <button class="count-minus" type="button">
-            <i class="bx bx-minus"></i>
-          </button>
-          <span class="count">1</span>
-          <button class="count-plus" type="button">
-            <i class="bx bx-plus"></i>
-          </button>
+        <div class="item-control">
+          <div class="item-count">
+            <button class="count-minus" type="button" data-id=${
+              shoes.id
+            } data-value="minus">
+              <i class="bx bx-minus"></i>
+            </button>
+            <span class="count">${shoes.order}</span>
+            <button class="count-plus" type="button"  data-id=${
+              shoes.id
+            } data-value="plus">
+              <i class="bx bx-plus"></i>
+            </button>
+          </div>
+          <div class="single-total-price">
+            ${(shoes.price * shoes.order).toLocaleString()}
+          </div>
         </div>
       </div>
     </li>`;
@@ -81,6 +90,7 @@ export function loadCart(shoesBox) {
             } else {
               //장바구니 추가
               shoes.cart = true;
+              shoes.order += 1;
               console.log("장바구니 추가");
               alert("장바구니에 담았습니다.");
               return saveCartGoods.push(shoes);
@@ -98,13 +108,14 @@ function deleteCart(e) {
   const cartRemoveBtns = document.querySelectorAll(".item-remove");
   cartRemoveBtns.forEach((cartRemoveBtn) => {
     if (e.target === cartRemoveBtn) {
-      const cleanWish = saveCartGoods.findIndex((item) => {
+      const cleanCart = saveCartGoods.findIndex((item) => {
         return item.id === parseInt(cartRemoveBtn.dataset.id);
       });
       //cart-storage에서 삭제
-      saveCartGoods.splice(cleanWish, 1);
+      saveCartGoods.splice(cleanCart, 1);
       //cart-page에서 삭제
-      cartContainer.removeChild(cartContainer.children[cleanWish]);
+      cartContainer.removeChild(cartContainer.children[cleanCart]);
+      //변경사항 저장
       saveCart(saveCartGoods);
       totalPrice();
     }
@@ -115,8 +126,43 @@ function deleteCart(e) {
   }
 }
 
+function singleGoodsControl(e, plusMinusBtns) {
+  const goodsCount = document.querySelectorAll(".count");
+  const singleGoodsPrice = document.querySelectorAll(".single-total-price");
+
+  plusMinusBtns.forEach((plusMinusBtn) => {
+    if (e.target.parentNode === plusMinusBtn) {
+      const cartdataId = saveCartGoods.findIndex((item) => {
+        return item.id === parseInt(plusMinusBtn.dataset.id);
+      });
+      const pickGoods = saveCartGoods[cartdataId];
+      //cart-storage에서 수량 증가
+      if (plusMinusBtn.dataset.value === "plus") {
+        pickGoods.order++;
+      } else {
+        pickGoods.order > 1 && pickGoods.order--;
+      }
+      //cart-page에서 수량 증가
+      goodsCount[cartdataId].innerHTML = pickGoods.order;
+      //수량에 따른 신발 가격
+      singleGoodsPrice[cartdataId].innerHTML = (
+        pickGoods.price * pickGoods.order
+      ).toLocaleString();
+      //변경사항 저장
+      saveCart(saveCartGoods);
+    }
+  });
+}
+
 //cart-page controller
 function cartListHandler(e) {
+  const plusBtns = document.querySelectorAll(".count-plus");
+  const minusBtns = document.querySelectorAll(".count-minus");
+
+  //single goods price and count
+  singleGoodsControl(e, plusBtns);
+  singleGoodsControl(e, minusBtns);
+
   //delete cart
   deleteCart(e);
 }

@@ -7,7 +7,8 @@
       "color": "black",
       "image": "./assets/shoes_black.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 2,
@@ -16,7 +17,8 @@
       "color": "black",
       "image": "./assets/shoes_black2.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 3,
@@ -25,7 +27,8 @@
       "color": "blue",
       "image": "./assets/shoes_blue.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 4,
@@ -34,7 +37,8 @@
       "color": "brown",
       "image": "./assets/shoes_brown2.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 5,
@@ -43,7 +47,8 @@
       "color": "green",
       "image": "./assets/shoes_green.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 6,
@@ -52,7 +57,8 @@
       "color": "green",
       "image": "./assets/shoes_green2.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 7,
@@ -61,7 +67,8 @@
       "color": "grey",
       "image": "./assets/shoes_grey.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 8,
@@ -70,7 +77,8 @@
       "color": "pink",
       "image": "./assets/shoes_pink.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 9,
@@ -79,7 +87,8 @@
       "color": "pink",
       "image": "./assets/shoes_pink2.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 10,
@@ -88,7 +97,8 @@
       "color": "pink",
       "image": "./assets/shoes_pink3.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 11,
@@ -97,7 +107,8 @@
       "color": "purple",
       "image": "./assets/shoes_purple.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 12,
@@ -106,7 +117,8 @@
       "color": "red",
       "image": "./assets/shoes_red.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 13,
@@ -115,7 +127,8 @@
       "color": "red",
       "image": "./assets/shoes_red2.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 14,
@@ -124,7 +137,8 @@
       "color": "red",
       "image": "./assets/shoes_red3.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 15,
@@ -133,7 +147,8 @@
       "color": "white",
       "image": "./assets/shoes_white.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 16,
@@ -142,7 +157,8 @@
       "color": "white",
       "image": "./assets/shoes_white2.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 17,
@@ -151,7 +167,8 @@
       "color": "white",
       "image": "./assets/shoes_white3.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 18,
@@ -160,7 +177,8 @@
       "color": "yellow",
       "image": "./assets/shoes_yellow.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     },
     {
       "id": 19,
@@ -169,7 +187,8 @@
       "color": "yellow",
       "image": "./assets/shoes_yellow2.png",
       "wish": false,
-      "cart": false
+      "cart": false,
+      "order": 0
     }
   ]
 }

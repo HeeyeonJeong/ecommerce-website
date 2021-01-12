@@ -58,7 +58,6 @@ body {
 
 .cart-info-box .item-info .info-name {
   font-size: 1.2rem;
-  font-weight: 700;
   margin-bottom: 0.8rem;
 }
 
@@ -72,15 +71,23 @@ body {
   border-bottom: 1px solid black;
 }
 
-.cart-info-box .item-count {
+.cart-info-box .item-control .item-count {
   min-width: 50px;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
-.cart-info-box .item-count .count {
+.item-control .item-count .count {
   position: relative;
   top: -2px;
   font-weight: 700;
   font-size: 1.3rem;
+}
+
+.item-control .single-total-price {
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 /* total */
@@ -142,18 +149,32 @@ body {
     font-size: 1.5rem;
   }
 
-  .cart-info-box .item-count .count {
+  .cart-info-box .item-control {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+  }
+
+  .item-control .item-count {
+    margin-bottom: 0;
+  }
+
+  .item-control .item-count .count {
     font-size: 2.1rem;
     top: -3px;
     margin: 0 1rem;
   }
 
-  .cart-info-box .item-count .count-minus {
+  .item-control .item-count .count-minus {
     font-size: 1.8rem;
   }
 
-  .cart-info-box .item-count .count-plus {
+  .item-control .item-count .count-plus {
     font-size: 2.1rem;
+  }
+
+  .item-control .single-total-price {
+    font-size: 1.8rem;
   }
 
   /* total */
