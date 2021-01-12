@@ -58,6 +58,7 @@ body {
 
 .cart-info-box .item-info .info-name {
   font-size: 1.2rem;
+  font-weight: 700;
   margin-bottom: 0.8rem;
 }
 
@@ -86,7 +87,6 @@ body {
 
 .item-control .single-total-price {
   font-size: 1.3rem;
-  font-weight: 700;
   text-align: center;
 }
 

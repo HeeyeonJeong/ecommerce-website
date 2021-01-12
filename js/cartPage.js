@@ -17,8 +17,10 @@ function cartCreateHTML(shoes) {
       </div>
       <div class="cart-info-box">
         <div class="item-info">
-          <div class="info-name">${shoes.productName}</div>
-          <div class="info-price">${shoes.price.toLocaleString()}</div>
+          <dl>
+            <dt class="info-name">${shoes.productName}</dt>
+            <dd class="info-price">${shoes.price.toLocaleString()}</dd>
+          </dl>
           <button class="item-remove" type="button" data-id=${
             shoes.id
           }>Remove</button>
@@ -37,9 +39,9 @@ function cartCreateHTML(shoes) {
               <i class="bx bx-plus"></i>
             </button>
           </div>
-          <div class="single-total-price">
+          <strong class="single-total-price">
             ${(shoes.price * shoes.order).toLocaleString()}
-          </div>
+          </strong>
         </div>
       </div>
     </li>`;
@@ -126,6 +128,7 @@ function deleteCart(e) {
   }
 }
 
+//single goods price and count
 function singleGoodsControl(e, plusMinusBtns) {
   const goodsCount = document.querySelectorAll(".count");
   const singleGoodsPrice = document.querySelectorAll(".single-total-price");
@@ -136,13 +139,13 @@ function singleGoodsControl(e, plusMinusBtns) {
         return item.id === parseInt(plusMinusBtn.dataset.id);
       });
       const pickGoods = saveCartGoods[cartdataId];
-      //cart-storage에서 수량 증가
+      //cart-storage에서 수량 증감
       if (plusMinusBtn.dataset.value === "plus") {
         pickGoods.order++;
       } else {
         pickGoods.order > 1 && pickGoods.order--;
       }
-      //cart-page에서 수량 증가
+      //cart-page에서 수량 증감
       goodsCount[cartdataId].innerHTML = pickGoods.order;
       //수량에 따른 신발 가격
       singleGoodsPrice[cartdataId].innerHTML = (
