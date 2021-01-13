@@ -50,7 +50,7 @@ function cartCreateHTML(shoes) {
 //total price
 function totalPrice() {
   const priceBox = saveCartGoods.reduce((prev, curr) => {
-    return prev + curr.price;
+    return prev + curr.price * curr.order;
   }, 0);
   if (cartTotalPrice) {
     cartTotalPrice.innerHTML = priceBox.toLocaleString();
@@ -166,8 +166,8 @@ function cartListHandler(e) {
   singleGoodsControl(e, plusBtns);
   singleGoodsControl(e, minusBtns);
 
-  //delete cart
   deleteCart(e);
+  totalPrice();
 }
 
 if (cartContainer !== null) {
