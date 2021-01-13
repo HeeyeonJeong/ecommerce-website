@@ -101,6 +101,7 @@ export function loadCart(shoesBox) {
         });
       }
       saveCart(saveCartGoods);
+      totalCartCount();
     });
   });
 }
@@ -120,6 +121,7 @@ function deleteCart(e) {
       //변경사항 저장
       saveCart(saveCartGoods);
       totalPrice();
+      totalCartCount();
     }
   });
   if (cartContainer.children.length === 0) {
@@ -156,6 +158,19 @@ function singleGoodsControl(e, plusMinusBtns) {
     }
   });
 }
+
+//cart total number of goods
+function totalCartCount() {
+  const totalCounts = document.querySelectorAll(".top-cart-count");
+  totalCounts.forEach((totalCount) => {
+    totalCount.innerHTML = saveCartGoods.length;
+    if (saveCartGoods.length === 0) {
+      totalCount.innerHTML = "";
+    }
+  });
+}
+
+window.addEventListener("load", totalCartCount);
 
 //cart-page controller
 function cartListHandler(e) {
