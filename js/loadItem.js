@@ -1,13 +1,7 @@
 import { loadCart, paintCartPage, saveCartGoods } from "./cartPage.js";
+import { loadWish, paintWishPage, saveWishGoods } from "./wishList.js";
 
 const itemContainer = document.querySelector(".goods-container");
-const wishContainer = document.querySelector(".wish-container");
-const wishEmpty = document.querySelector(".empty");
-
-//wish-storage
-let saveWishGoods = localStorage.getItem("wishList")
-  ? JSON.parse(localStorage.getItem("wishList"))
-  : [];
 
 //localStrage에 wish/cart goods가 존재하는지 체크
 function storageCheck(json, saveGoods, mode) {
@@ -42,7 +36,7 @@ function displayItems(shoesBox) {
 }
 
 //createHTML - wish
-function createHTML(shoes) {
+export function createHTML(shoes) {
   return `
     <li class="goods-card">
       <div class="card-img-box">
@@ -71,69 +65,6 @@ function createHTML(shoes) {
       </div>        
     </li>
 `;
-}
-
-//save wish
-function saveWish(saveWishGoods) {
-  localStorage.setItem("wishList", JSON.stringify(saveWishGoods));
-}
-
-// wish-page paint
-function paintWishPage(shoesBox) {
-  const loadWishGoods = localStorage.getItem("wishList");
-  if (wishContainer !== null) {
-    wishContainer.innerHTML = JSON.parse(loadWishGoods)
-      .map((shoes) => createHTML(shoes))
-      .join("");
-    if (wishContainer.children.length !== 0) {
-      wishEmpty.classList.add("hidden");
-    }
-  }
-  loadWish(shoesBox);
-  loadCart(shoesBox);
-}
-
-//delete wish list
-function deletWish(cleanWish) {
-  if (wishContainer !== null) {
-    wishContainer.removeChild(wishContainer.children[cleanWish]);
-    if (wishContainer.children.length === 0) {
-      wishEmpty.classList.remove("hidden");
-    }
-  }
-}
-
-//wish goods
-function loadWish(shoesBox) {
-  const likebtns = document.querySelectorAll(".like-icon");
-  likebtns.forEach((likebtn) => {
-    likebtn.addEventListener("click", (e) => {
-      const goodsBtn = e.target.parentNode;
-      if (goodsBtn) {
-        shoesBox.find((shoes) => {
-          if (shoes.id === parseInt(goodsBtn.dataset.id)) {
-            if (shoes.wish) {
-              const cleanWish = saveWishGoods.findIndex((item) => {
-                return item.id === parseInt(goodsBtn.dataset.id);
-              });
-              saveWishGoods.splice(cleanWish, 1);
-              shoes.wish = false;
-              goodsBtn.innerHTML = `<i class='bx bx-heart'></i>`;
-              console.log("위시리스트 지움");
-              deletWish(cleanWish);
-              return saveWishGoods;
-            } else {
-              shoes.wish = true;
-              console.log("위시리스트 추가");
-              goodsBtn.innerHTML = `<i class='bx bxs-heart' style='color:#d64040'></i>`;
-              return saveWishGoods.push(shoes);
-            }
-          }
-        });
-      }
-      saveWish(saveWishGoods);
-    });
-  });
 }
 
 //user selected color
