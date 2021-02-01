@@ -1,7 +1,28 @@
-import { loadCart, paintCartPage, saveCartGoods } from "./cartPage.js";
+import {
+  totalCartCount,
+  loadCart,
+  paintCartPage,
+  saveCartGoods,
+} from "./cartPage.js";
 import { loadWish, paintWishPage, saveWishGoods } from "./wishList.js";
 
-const itemContainer = document.querySelector(".goods-container");
+//header, footer markup data include
+async function asyncMarkupData() {
+  const allElements = document.getElementsByTagName("*");
+  Array.prototype.forEach.call(allElements, function (el) {
+    const includePath = el.dataset.includePath;
+    if (includePath) {
+      const xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+          el.outerHTML = this.responseText;
+        }
+      };
+      xhttp.open("GET", includePath, true);
+      xhttp.send();
+    }
+  });
+}
 
 //localStrage에 wish/cart goods가 존재하는지 체크
 function storageCheck(json, saveGoods, mode) {
@@ -27,6 +48,8 @@ async function loadItems() {
 
 //list 출력
 function displayItems(shoesBox) {
+  const itemContainer = document.querySelector(".goods-container");
+
   if (itemContainer !== null) {
     itemContainer.innerHTML = shoesBox
       .map((shoes) => createHTML(shoes))
@@ -90,9 +113,12 @@ function selectColorFilter(e, shoesBox) {
 }
 
 //main
-loadItems().then((shoesBox) => {
-  displayItems(shoesBox);
-  selectHandler(shoesBox);
-  paintWishPage(shoesBox);
-  paintCartPage(shoesBox);
-});
+asyncMarkupData().then(
+  loadItems().then((shoesBox) => {
+    totalCartCount();
+    displayItems(shoesBox);
+    selectHandler(shoesBox);
+    paintWishPage(shoesBox);
+    paintCartPage(shoesBox);
+  })
+);

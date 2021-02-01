@@ -1,12 +1,12 @@
-const slideOpenBtn = document.querySelector(".top-nav-modal");
-const slideCloseBtn = document.querySelector(".category-close");
-const slideMenu = document.querySelector(".top-nav-category");
-const newListBox = document.querySelector(".new-box");
-
 //top-nav / slide sidebar menu
 function slideMenuHandler(e) {
+  const slideOpenBtn = document.querySelector(".top-nav-modal");
+  const slideCloseBtn = document.querySelector(".category-close");
+  const slideMenu = document.querySelector(".top-nav-category");
+
   const target = e.target;
   const activetarget = e.currentTarget.document.activeElement;
+
   if (activetarget === slideOpenBtn) {
     slideMenu.classList.add("open");
   } else if (activetarget === slideCloseBtn || target !== slideMenu) {
@@ -18,6 +18,8 @@ window.addEventListener("click", slideMenuHandler);
 
 //New Item / horizontal-scroll
 function newItemWheel(e) {
+  const newListBox = document.querySelector(".new-box");
+
   if (e.path[3] === newListBox) {
     document.body.classList.add("stop-scrolling");
     e.deltaY > 0

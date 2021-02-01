@@ -45,7 +45,7 @@ export function loadWish(shoesBox) {
   likebtns.forEach((likebtn) => {
     likebtn.addEventListener("click", (e) => {
       const goodsBtn = e.target.parentNode;
-      if (goodsBtn) {
+      goodsBtn &&
         shoesBox.find((shoes) => {
           if (shoes.id === parseInt(goodsBtn.dataset.id)) {
             if (shoes.wish) {
@@ -66,7 +66,6 @@ export function loadWish(shoesBox) {
             }
           }
         });
-      }
       saveWish(saveWishGoods);
     });
   });

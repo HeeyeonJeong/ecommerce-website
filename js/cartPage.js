@@ -83,7 +83,7 @@ export function loadCart(shoesBox) {
   cartbtns.forEach((cartbtn) => {
     cartbtn.addEventListener("click", (e) => {
       const goodsCart = e.target.parentNode;
-      if (goodsCart) {
+      goodsCart &&
         shoesBox.find((shoes) => {
           if (shoes.id === parseInt(goodsCart.dataset.id)) {
             if (saveCartGoods.some((cart) => cart.id === shoes.id)) {
@@ -99,7 +99,6 @@ export function loadCart(shoesBox) {
             }
           }
         });
-      }
       saveCart(saveCartGoods);
       totalCartCount();
     });
@@ -160,7 +159,7 @@ function singleGoodsControl(e, plusMinusBtns) {
 }
 
 //cart total number of goods
-function totalCartCount() {
+export function totalCartCount() {
   const totalCounts = document.querySelectorAll(".top-cart-count");
   totalCounts.forEach((totalCount) => {
     totalCount.innerHTML = saveCartGoods.length;
