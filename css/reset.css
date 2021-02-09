@@ -4,6 +4,13 @@
   box-sizing: inherit;
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 html {
   font-size: 62.5%;
   width: 100%;
