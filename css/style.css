@@ -304,6 +304,30 @@
   margin-left: 1rem;
 }
 
+/* section-goods-pagination */
+.goods-page .goods-pagination {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+.goods-pagination .page-list .page-btn {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+  width: 2.7rem;
+}
+
+.active {
+  color: white;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.page-list + .page-list {
+  margin-left: 3rem;
+}
+
 /* footer */
 .info-page {
   background-color: black;
@@ -388,6 +412,11 @@
   /* section-goods */
   .goods-page .sec-top .goods-desc {
     font-size: 1.7rem;
+  }
+
+  /* pagination */
+  .page-list + .page-list {
+    margin-left: 1.8rem;
   }
 
   /* footer */

@@ -47,18 +47,38 @@ async function loadItems() {
 }
 
 //list 출력
-function displayItems(shoesBox) {
+function displayItems(shoesBox, currentPageNum) {
   const itemContainer = document.querySelector(".goods-container");
+  const pageBtns = document.querySelectorAll(".page-btn");
 
+  //data slice
+  let dataPerPage = 6;
+  let startIndexItem = currentPageNum - 1;
+
+  let pageShowBox = shoesBox.slice(
+    dataPerPage * startIndexItem,
+    dataPerPage * currentPageNum
+  );
+
+  //data print
   if (itemContainer !== null) {
-    itemContainer.innerHTML = shoesBox
+    itemContainer.innerHTML = pageShowBox
       .map((shoes) => createHTML(shoes))
       .join("");
   }
-  loadWish(shoesBox);
+
+  //pageBtn active
+  pageBtns.forEach((pageBtn) => {
+    const pageNum = parseInt(pageBtn.innerHTML);
+    if (pageNum === currentPageNum) {
+      pageBtn.classList.add("active");
+    } else {
+      pageBtn.classList.remove("active");
+    }
+  });
 }
 
-//createHTML - wish
+//createHTML
 export function createHTML(shoes) {
   return `
     <li class="goods-card">
@@ -90,6 +110,51 @@ export function createHTML(shoes) {
 `;
 }
 
+//pagination paint
+function pagination(shoesBox) {
+  const pageContainer = document.querySelector(".goods-pagination");
+
+  let pageArray = [];
+  let totalCount = shoesBox.length;
+  let totalPage = Math.ceil(totalCount / 6);
+  let currentPage = 1;
+
+  for (let i = 1; i <= totalPage; i++) {
+    pageArray.push(i);
+  }
+
+  if (pageContainer !== null) {
+    pageContainer.innerHTML = pageArray
+      .map((num) => paginationHTML(num))
+      .join("");
+  }
+
+  function pageData(e) {
+    if (e.target.tagName === "BUTTON") {
+      let num = parseInt(e.target.innerHTML);
+      let currentPage = num;
+
+      displayItems(shoesBox, currentPage);
+
+      loadCart(shoesBox);
+      loadWish(shoesBox);
+    }
+  }
+
+  pageContainer && pageContainer.addEventListener("click", pageData);
+
+  displayItems(shoesBox, currentPage);
+}
+
+//pagination - html
+function paginationHTML(num) {
+  return `
+  <li class="page-list">
+    <button type="button" class="page-btn">${num}</button>
+  </li>
+  `;
+}
+
 //user selected color
 function selectHandler(shoesBox) {
   const sortContainer = document.querySelector(".goods-sort");
@@ -108,17 +173,20 @@ function selectColorFilter(e, shoesBox) {
   const userSelect = shoesBox.filter(
     (shoes) => shoes[userChoiceColor.key] === userChoiceColor.value
   );
-  displayItems(userSelect);
+  pagination(userSelect);
   loadCart(userSelect);
+  loadWish(userSelect);
 }
 
 //main
-asyncMarkupData().then(
-  loadItems().then((shoesBox) => {
+asyncMarkupData()
+  .then(() => {
+    return loadItems();
+  })
+  .then((shoesBox) => {
     totalCartCount();
-    displayItems(shoesBox);
+    pagination(shoesBox);
     selectHandler(shoesBox);
     paintWishPage(shoesBox);
     paintCartPage(shoesBox);
-  })
-);
+  });
