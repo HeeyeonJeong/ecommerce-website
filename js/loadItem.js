@@ -131,8 +131,7 @@ function pagination(shoesBox) {
 
   function pageData(e) {
     if (e.target.tagName === "BUTTON") {
-      let num = parseInt(e.target.innerHTML);
-      let currentPage = num;
+      let currentPage = parseInt(e.target.innerHTML);
 
       displayItems(shoesBox, currentPage);
 
