@@ -102,20 +102,10 @@
 }
 
 .cart-page .total-order {
-  display: block;
-  border: 1px solid black;
-  border-radius: 30px;
-  padding: 1rem;
   font-size: 1.3rem;
-  width: 13rem;
-  text-align: center;
+  width: 15rem;
+  padding: 1.3rem;
   margin: 3rem auto;
-}
-
-.cart-page .total-order:hover {
-  background-color: black;
-  color: white;
-  transition: 100ms all ease-out;
 }
 
 @media only screen and (min-width: 768px) {

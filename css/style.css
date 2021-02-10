@@ -21,6 +21,20 @@
   border-radius: 50%;
 }
 
+.control-btn {
+  display: block;
+  border: 1px solid black;
+  border-radius: 30px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.control-btn:hover {
+  background-color: black;
+  color: white;
+  transition: 100ms all ease-out;
+}
+
 /* mobile */
 /* header-nav */
 .top {
