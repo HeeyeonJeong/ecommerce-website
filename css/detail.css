@@ -1,0 +1,129 @@
+/* detail */
+.detail-page {
+  padding: 10rem 2rem;
+}
+
+.detail-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-container .detail-goods-photo {
+  margin-bottom: 3rem;
+  width: 350px;
+}
+
+.detail-container .detail-goods-photo img {
+  width: 100%;
+}
+
+.detail-container .detail-info-box {
+  padding: 1rem;
+}
+
+.detail-container .detail-info-box .detail-goods {
+  margin-bottom: 3rem;
+}
+
+.detail-goods .detail-info {
+  margin-bottom: 2rem;
+}
+
+.detail-goods .detail-info .detail-name {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.detail-goods .detail-info .detail-price {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.detail-goods .detail-summary {
+  font-size: 1.5rem;
+  /* padding: 1rem; */
+  text-align: center;
+}
+
+.detail-container .detail-info-box .detail-info-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.detail-info-control .control-btn {
+  width: 18rem;
+  height: 2rem;
+  font-size: 1.5rem;
+}
+
+.control-btn + .control-btn {
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 375px) {
+  .detail-container .detail-goods-photo {
+    width: 280px;
+  }
+
+  .detail-goods .detail-info .detail-name {
+    font-size: 2.7rem;
+  }
+
+  .detail-goods .detail-info .detail-price {
+    font-size: 1.6rem;
+  }
+
+  .detail-goods .detail-summary {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .detail-container .detail-goods-photo {
+    width: 500px;
+    margin: 0;
+  }
+
+  .detail-goods .detail-info {
+    margin-bottom: 3rem;
+  }
+
+  .detail-container .detail-info-box {
+    padding: 5rem;
+  }
+
+  .detail-container .detail-info-box .detail-info-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .control-btn + .control-btn {
+    margin-top: 0;
+    margin-left: 3rem;
+  }
+
+  .detail-container .detail-info-box .detail-goods {
+    margin-bottom: 5rem;
+  }
+
+  .detail-goods .detail-summary {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .detail-container {
+    flex-direction: row;
+  }
+
+  .detail-container .detail-info-box {
+    width: 40%;
+    padding-right: 0;
+  }
+}

@@ -19,13 +19,37 @@
   </head>
   <body>
     <!-- header -->
-    <div data-include-path="header.html"></div>
+    <header data-include-path="header.html"></header>
 
-    <!-- goods -->
-    <div></div>
+    <!-- goods detail-->
+    <main class="detail-page">
+      <div class="detail-container">
+        <div class="detail-goods-photo">
+          <img src="./assets/shoes_white3.png" alt="goods-image" />
+        </div>
+        <div class="detail-info-box">
+          <div class="detail-goods">
+            <dl class="detail-info">
+              <dt class="detail-name">Blue Shin woe</dt>
+              <dd class="detail-price">120,000</dd>
+            </dl>
+            <p class="detail-summary">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia
+              minima impedit omnis. Velit cum ipsam commodi sunt mollitia quidem
+              expedita, ratione nobis est laudantium natus officia. Sit
+              architecto exercitationem nobis!
+            </p>
+          </div>
+          <div class="detail-info-control">
+            <button type="button" class="control-btn detail-wish">WISH</button>
+            <button type="button" class="control-btn detail-cart">CART</button>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- footer -->
-    <div data-include-path="footer.html"></div>
+    <footer data-include-path="footer.html"></footer>
 
     <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/loadItem.js"></script>
