@@ -5,6 +5,7 @@ import {
   saveCartGoods,
 } from "./cartPage.js";
 import { loadWish, paintWishPage, saveWishGoods } from "./wishList.js";
+import { loadDetail } from "./detailPage.js";
 
 //header, footer markup data include
 async function asyncMarkupData() {
@@ -101,9 +102,9 @@ export function createHTML(shoes) {
               <button type="button" data-id=${
                 shoes.id
               } class="card-icon cart-icon"><i class='bx bx-cart'></i></button>
-              <a href="detail.html" data-id=${
-                shoes.id
-              } class="card-icon more-icon"><i class='bx bxs-plus-square'></i></a>
+              <a href=detail.html?${shoes.id} data-id=${
+    shoes.id
+  } class="card-icon more-icon"><i class='bx bxs-plus-square'></i></a>
           </div>               
       </div>        
     </li>
@@ -185,6 +186,7 @@ asyncMarkupData()
   .then((shoesBox) => {
     totalCartCount();
     pagination(shoesBox);
+    loadDetail(shoesBox);
     selectHandler(shoesBox);
     paintWishPage(shoesBox);
     paintCartPage(shoesBox);
