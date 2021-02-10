@@ -7,5 +7,19 @@ export function loadDetail(shoesBox) {
     return shoes.id === parseInt(params);
   });
 
-  console.log(detailGoods);
+  paintDetail(detailGoods);
 }
+
+const detailImage = document.querySelector(".detail-photo");
+const detailTitle = document.querySelector(".detail-name");
+const detialPrice = document.querySelector(".detail-price");
+
+function paintDetail(detailGoods) {
+  if (detailGoods) {
+    detailImage.src = detailGoods.image;
+    detailTitle.innerHTML = detailGoods.productName;
+    detialPrice.innerHTML = detailGoods.price.toLocaleString();
+  }
+}
+
+paintDetail();
