@@ -102,9 +102,9 @@ export function createHTML(shoes) {
               <button type="button" data-id=${
                 shoes.id
               } class="card-icon cart-icon"><i class='bx bx-cart'></i></button>
-              <a href=detail.html?${shoes.id} data-id=${
-    shoes.id
-  } class="card-icon more-icon"><i class='bx bxs-plus-square'></i></a>
+              <a href=detail.html?${
+                shoes.id
+              } class="card-icon more-icon"><i class='bx bxs-plus-square'></i></a>
           </div>               
       </div>        
     </li>
