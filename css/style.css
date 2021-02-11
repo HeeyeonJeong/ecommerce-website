@@ -170,14 +170,15 @@
   bottom: 5rem;
 }
 
-.landing-desc-box .landing-desc-btn {
-  width: 18rem;
-  height: 4rem;
+.landing-desc-box .landing-detail-link {
+  display: block;
+  padding: 1rem;
+  width: 50%;
+  font-size: 1.8rem;
   background-color: black;
   color: white;
-  border: none;
-  font-size: 1.8rem;
   border-radius: 5px;
+  margin: 0 auto;
 }
 
 /* section-new */
@@ -411,9 +412,6 @@
   .landing-desc-box .landing-desc .card-tit {
     font-size: 2.8rem;
   }
-  .landing-desc-box .landing-desc-btn {
-    width: 15rem;
-  }
 
   /* section-new */
   .landing .landing-image-box {
@@ -518,9 +516,8 @@
     bottom: 10rem;
   }
 
-  .landing-desc-box .landing-desc-btn {
-    width: 30rem;
-    height: 6rem;
+  .landing-desc-box .landing-detail-link {
+    padding: 1.3rem;
     font-size: 3rem;
   }
 
@@ -607,10 +604,14 @@
     top: 0rem;
   }
 
-  .landing-desc-box .landing-desc-btn {
-    width: 18rem;
-    height: 5rem;
+  .landing-desc-box .landing-detail-link {
     font-size: 2.2rem;
+    transition: background 150ms ease-out;
+  }
+
+  .landing-desc-box .landing-detail-link:hover {
+    background: none;
+    color: black;
   }
 
   /* section-new */
