@@ -10,7 +10,7 @@ export let saveWishGoods = localStorage.getItem("wishList")
   : [];
 
 //save wish
-function saveWish(saveWishGoods) {
+export function saveWish(saveWishGoods) {
   localStorage.setItem("wishList", JSON.stringify(saveWishGoods));
 }
 

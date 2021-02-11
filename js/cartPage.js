@@ -73,7 +73,7 @@ export function paintCartPage() {
 }
 
 //save cart
-function saveCart(saveCartGoods) {
+export function saveCart(saveCartGoods) {
   localStorage.setItem("cartList", JSON.stringify(saveCartGoods));
 }
 
