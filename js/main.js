@@ -5,9 +5,10 @@ function slideMenuHandler(e) {
   const slideMenu = document.querySelector(".top-nav-category");
 
   const target = e.target;
+  const parentTarget = e.target.parentNode;
   const activetarget = e.currentTarget.document.activeElement;
 
-  if (activetarget === slideOpenBtn) {
+  if (parentTarget === slideOpenBtn) {
     slideMenu.classList.add("open");
   } else if (activetarget === slideCloseBtn || target !== slideMenu) {
     slideMenu.classList.remove("open");
